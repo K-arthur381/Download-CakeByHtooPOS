@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download CakeByHtoo App-Mobile,Window</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff6b8b;
+            --primary-dark: #ff4d6d;
+            --secondary: #9d4edd;
+            --success: #38b000;
+            --warning: #ff9e00;
+            --info: #00bbf9;
+            --dark: #1a1a2e;
+            --darker: #16213e;
+            --light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            min-height: 100vh;
+        }
+
+        .font-quicksand {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 139, 0.1) 0%, 
+                rgba(157, 78, 221, 0.1) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-title {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        .badge-version {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-feature {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .card-feature:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(255, 107, 139, 0.2);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .platform-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .platform-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 139, 0.2);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .btn-primary-grad {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary-grad:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 139, 0.3);
+        }
+
+        .btn-secondary-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-outline:hover {
+            border-color: var(--primary);
+            background: rgba(255, 107, 139, 0.1);
+        }
+
+        .version-selector {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .version-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .version-item:hover {
+            background: rgba(255, 107, 139, 0.1);
+            border-color: var(--primary);
+        }
+
+        .version-item.active {
+            background: rgba(255, 107, 139, 0.15);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.1);
+        }
+
+        .version-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .version-badge.beta {
+            background: var(--warning);
+        }
+
+        .version-badge.alpha {
+            background: var(--info);
+        }
+
+        .screenshot-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .tab-content {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 16px 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
+        }
+
+        .nav-tabs {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-tabs .nav-link {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .nav-tabs .nav-link:hover {
+            color: var(--light);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: rgba(255, 107, 139, 0.15);
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .requirement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirement-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requirement-list li i {
+            color: var(--success);
+        }
+
+        .demo-video {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg py-3">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">
+                <i class="bi bi-cake2-fill"></i>
+                CakeByHtoo
+            </a>
+            <div class="d-flex gap-3">
+                 <a href="doc.html" class="btn btn-secondary-outline">
+                   <i class="bi bi-file-earmark-text"></i> Document(User-Guide)
+                </a>
+                <a href="https://github.com/K-arthur381/CakeByHtoo" target="_blank" class="btn btn-secondary-outline">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge-version mb-3">
+                        <i class="bi bi-star-fill"></i> Version 7.0 Released!
+                    </span>
+                    <h1 class="hero-title">Complete Cake Shop Management</h1>
+                    <p class="lead mb-4" style="opacity: 0.9;">
+                        Everything you need to run your cake shop efficiently. 
+                        Manage orders, custom cakes, inventory, sales reports, and print receipts - 
+                        all in one beautiful app.
+                    </p>
+                    <div class="d-flex gap-3 mb-4 flex-wrap">
+                        <a href="#versions" class="btn btn-primary-grad pulse">
+                            Download MobileApp <i class="bi bi-android2"></i>
+                        </a>
+                        <a href="#versions" class="btn btn-secondary-outline">
+                            Download WindowApp <i class="bi bi-windows"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-5 mt-lg-0">
+                    <div class="screenshot-container floating">
+                        <!-- App Screenshot -->
+                        <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 2rem; min-height: 400px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <div style="text-align: center; position: relative;">
+                                <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
+                                    <i class="bi bi-phone" style="font-size: 3rem; color: var(--primary);"></i>
+                                    <i class="bi bi-laptop" style="font-size: 4rem; color: var(--secondary); margin-left: 20px;"></i>
+                                </div>
+                                <h3 style="color: white; margin-top: 40px;">CakeByHtoo</h3>
+                                <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Complete Shop Management</p>
+                                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                                    <span style="background: var(--primary); color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem;">Orders</span>
+                                    <span style="background: var(--secondary); color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem;">Reports</span>
+                                    <span style="background: var(--success); color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem;">Printing</span>
+                                    <span style="background: var(--info); color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem;">Inventory</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Complete Cake Shop Solution</h2>
+                <p class="text-muted">Everything you need to manage your cake shop efficiently</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-feature">
+                        <div class="feature-icon">
+                            <i class="bi bi-cart"></i>
+                        </div>
+                        <h4>Order Management</h4>
+                        <p class="text-muted">Complete order processing from cart to checkout with customer details tracking.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card-feature">
+                        <div class="feature-icon">
+                            <i class="bi bi-cake2"></i>
+                        </div>
+                        <h4>Custom Cake Design</h4>
+                        <p class="text-muted">Design custom cakes with size, flavor, decoration options and cake messages.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card-feature">
+                        <div class="feature-icon">
+                            <i class="bi bi-printer"></i>
+                        </div>
+                        <h4>Receipt Printing</h4>
+                        <p class="text-muted">Print thermal receipts and invoices for orders with professional formatting.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card-feature">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4>Sales Reports</h4>
+                        <p class="text-muted">Track sales by date, customer, and product with filterable reports.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card-feature">
+                        <div class="feature-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h4>Product Catalog</h4>
+                        <p class="text-muted">Browse cakes, juices, desserts with search and filter functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card-feature">
+                        <div class="feature-icon">
+                            <i class="bi bi-speedometer2"></i>
+                        </div>
+                        <h4>Shopkeeper Dashboard</h4>
+                        <p class="text-muted">Manage products, prices, flavors, sizes, and inventory from one dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Version Selection -->
+    <section id="versions" class="py-5" style="background: rgba(0, 0, 0, 0.2);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Choose Your Version</h2>
+                <p class="text-muted">7 versions available for both Windows and Mobile</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="version-selector h-100">
+                        <h4 class="mb-3">Select Version</h4>
+                        <div id="versionList">
+                            <div class="version-item active" data-version="7.0.1" data-mobile="CakeByHtoo-v7.0.1-android.apk" data-windows="CakeByHtoo-v7.0.1-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>v7.0.1</strong>
+                                        <span class="version-badge ms-2">Latest</span>
+                                    </div>
+                                    <i class="bi bi-check-circle-fill text-success"></i>
+                                </div>
+                                <small class="text-muted">Complete shop management with all features</small>
+                            </div>
+                            
+                            <div class="version-item" data-version="7.0.0" data-mobile="CakeByHtoo-v7.0.0-android.apk" data-windows="CakeByHtoo-v7.0.0-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong>v7.0.0</strong>
+                                    <span class="version-badge beta">Beta</span>
+                                </div>
+                                <small class="text-muted">Thermal printer support</small>
+                            </div>
+                            
+                            <div class="version-item" data-version="6.0.0" data-mobile="CakeByHtoo-v6.0.0-android.apk" data-windows="CakeByHtoo-v6.0.0-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong>v6.0.0</strong>
+                                    <span class="version-badge">Stable</span>
+                                </div>
+                                 <small class="text-muted">Added custom cake designer</small>
+                            
+                            </div>
+                            
+                            <div class="version-item" data-version="5.1.0" data-mobile="CakeByHtoo-v5.5-android.apk" data-windows="CakeByHtoo-v5.1.0-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong>v5.1.0</strong>
+                                    <span class="version-badge">Stable</span>
+                                </div>
+                                   <small class="text-muted">Enhanced reporting system</small>
+                            </div>
+                            
+                            <div class="version-item" data-version="5.0.0" data-mobile="CakeByHtoo-v5.0-android.apk" data-windows="CakeByHtoo-v5.0.0-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong>v5.0.0</strong>
+                                </div>
+                                <small class="text-muted">Basic order management</small>
+                            </div>
+                            
+                            <div class="version-item" data-version="4.0.1" data-mobile="CakeByHtoo-v4.0.1-android.apk" data-windows="CakeByHtoo-v4.0.1-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong>v4.0.1</strong>
+                                    <span class="version-badge alpha">Alpha</span>
+                                </div>
+                                <small class="text-muted">Initial release with core features</small>
+                            </div>
+                            
+                            <div class="version-item" data-version="1.0.0" data-mobile="CakeByHtoo-v1.0.0-android.apk" data-windows="CakeByHtoo-v1.0.0-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong>v1.0.0</strong>
+                                </div>
+                                <small class="text-muted">Legacy version</small>
+                            </div>
+                              <div class="version-item" data-version="1.0" data-mobile="CakeByHtoo-v1.0-android.apk" data-windows="CakeByHtoo-v1.0-windows.rar">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <strong>v1.1</strong>
+                                </div>
+                                <small class="text-muted">Ui Only</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h6>Version Info</h6>
+                            <div id="versionDetails">
+                                <p class="text-muted small mb-1">Selected: <strong>v7.0</strong></p>
+                                <p class="text-muted small mb-1">Release Date: Dec 15, 2024</p>
+                                <p class="text-muted small mb-1">File Size: Android 28MB, Windows 45MB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8">
+                    <!-- Platform Tabs -->
+                    <ul class="nav nav-tabs" id="platformTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="android-tab" data-bs-toggle="tab" data-bs-target="#android" type="button" role="tab">
+                                <i class="bi bi-android2"></i> Android Mobile
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="windows-tab" data-bs-toggle="tab" data-bs-target="#windows" type="button" role="tab">
+                                <i class="bi bi-windows"></i> Windows Desktop
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="platformTabsContent">
+                        <!-- Android Tab -->
+                        <div class="tab-pane fade show active" id="android" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="platform-card p-4 text-center h-100">
+                                        <i class="bi bi-android2 platform-icon"></i>
+                                        <h4>Android App</h4>
+                                        <p class="text-muted">Perfect for shop counters and mobile use</p>
+                                        
+                                        <div class="mb-4">
+                                            <h5>Requirements</h5>
+                                            <ul class="requirement-list">
+                                                <li><i class="bi bi-check-circle"></i> Android 7.0 or higher</li>
+                                                <li><i class="bi bi-check-circle"></i> 50MB free space</li>
+                                                <li><i class="bi bi-check-circle"></i> Internet for updates</li>
+                                                <li><i class="bi bi-check-circle"></i> Bluetooth for printers</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <h6>File Details</h6>
+                                            <p class="text-muted small mb-1">Format: APK</p>
+                                            <p class="text-muted small mb-1">Size: <span id="androidSize">86 MB</span></p>
+                                            <p class="text-muted small">Version: <span id="androidVersion">v7.0.1</span></p>
+                                        </div>
+                                        
+                                        <button id="downloadAndroid" class="btn btn-primary-grad w-100">
+                                            <i class="bi bi-download"></i> Download APK
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="p-4">
+                                        <h5>Installation Guide</h5>
+                                        <div class="mb-4">
+                                            <ol class="text-muted">
+                                                <li class="mb-2">Download the APK file</li>
+                                                <li class="mb-2">Enable "Install from unknown sources" in Settings → Security</li>
+                                                <li class="mb-2">Open the downloaded APK file</li>
+                                                <li class="mb-2">Click "Install" and wait for completion</li>
+                                                <li class="mb-2">Open the app and start managing your shop!</li>
+                                            </ol>
+                                        </div>
+                                        
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                            <strong>Note:</strong> Some devices may require additional permissions for printing.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Windows Tab -->
+                        <div class="tab-pane fade" id="windows" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="platform-card p-4 text-center h-100">
+                                        <i class="bi bi-windows platform-icon"></i>
+                                        <h4>Windows App</h4>
+                                        <p class="text-muted">Desktop version for shop management</p>
+                                        
+                                        <div class="mb-4">
+                                            <h5>Requirements</h5>
+                                            <ul class="requirement-list">
+                                                <li><i class="bi bi-check-circle"></i> Windows 10 or 11</li>
+                                                <li><i class="bi bi-check-circle"></i> 4GB RAM minimum</li>
+                                                <li><i class="bi bi-check-circle"></i> .NET 8.0 Runtime</li>
+                                                <li><i class="bi bi-check-circle"></i> 100MB free space</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <h6>File Details</h6>
+                                            <p class="text-muted small mb-1">Format: rar (Portable)</p>
+                                            <p class="text-muted small mb-1">Size: <span id="windowsSize">491 MB</span></p>
+                                            <p class="text-muted small">Version: <span id="windowsVersion">v7.0.1</span></p>
+                                        </div>
+                                        
+                                        <button id="downloadWindows" class="btn btn-primary-grad w-100">
+                                            <i class="bi bi-download"></i> Download Windows
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="p-4">
+                                        <h5>Installation Guide</h5>
+                                        <div class="mb-4">
+                                            <ol class="text-muted">
+                                                <li class="mb-2">Download the rar file</li>
+                                                <li class="mb-2">Extract to any folder (e.g., C:\CakeByHtoo)</li>
+                                                <li class="mb-2">Run "CakeByHtoo.exe"</li>
+                                                <li class="mb-2">No installation needed - it's portable!</li>
+                                                <li class="mb-2">Create desktop shortcut if needed</li>
+                                            </ol>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <h6>.NET Runtime Required</h6>
+                                            <p class="text-muted small mb-3">
+                                                If you don't have .NET 8.0, download it first:
+                                            </p>
+                                            <a href="https://dotnet.microsoft.com/download/dotnet/8.0" target="_blank" class="btn btn-secondary-outline w-100">
+                                                <i class="bi bi-download"></i> Get .NET 8.0 Runtime
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources -->
+    <section id="doc" class="py-5" style="background: rgba(0, 0, 0, 0.2);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Additional Resources</h2>
+                <p class="text-muted">Everything you need to get started</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="platform-card p-4 text-center">
+                        <i class="bi bi-file-earmark-rar platform-icon"></i>
+                        <h5>Source Code</h5>
+                        <p class="text-muted small">Complete project source code for developers</p>
+                        <button id="downloadSource" class="btn btn-secondary-outline w-100">
+                            <i class="bi bi-github"></i> GitHub Repository
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="platform-card p-4 text-center">
+                        <i class="bi bi-file-earmark-text platform-icon"></i>
+                        <h5>Documentation</h5>
+                        <p class="text-muted small">Complete user guide and API documentation</p>
+                        <button id="downloadDocs" class="btn btn-secondary-outline w-100">
+                            <i class="bi bi-book"></i> Read Docs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="logo mb-3">
+                        <i class="bi bi-cake2-fill"></i>
+                        CakeByHtoo
+                    </div>
+                    <p class="text-muted">
+                        Complete cake shop management system for modern bakeries.
+                        Free, open-source, and packed with features.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-muted"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-muted"><i class="bi bi-facebook"></i></a>
+                        <a href="https://github.com/yourusername/CakeByHtoo" target="_blank" class="text-muted"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="mb-3">Platforms</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#android" class="text-decoration-none text-muted">Android</a></li>
+                        <li class="mb-2"><a href="#windows" class="text-decoration-none text-muted">Windows</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://github.com/K-arthur381/CakeByHtoo" target="_blank" class="text-decoration-none text-muted">Source Code</a></li>
+                        <li class="mb-2"><a href="https://github.com/K-arthur381/CakeByHtoo/issues" target="_blank" class="text-decoration-none text-muted">Report Issues</a></li>
+                        <li class="mb-2"><a href="https://github.com/K-arthur381/CakeByHtoo/wiki" target="_blank" class="text-decoration-none text-muted">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="mb-3">Features</h5>
+                    <div class="text-muted">
+                        <div class="mb-2">
+                            <i class="bi bi-cart-check"></i>
+                            <span class="ms-2">Order Management</span>
+                        </div>
+                        <div class="mb-2">
+                            <i class="bi bi-cake2"></i>
+                            <span class="ms-2">Custom Cake Design</span>
+                        </div>
+                        <div class="mb-2">
+                            <i class="bi bi-printer"></i>
+                            <span class="ms-2">Receipt Printing</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-graph-up"></i>
+                            <span class="ms-2">Sales Reports</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 opacity-25">
+            
+            <div class="text-center text-muted">
+                <p class="mb-0">© 2024 CakeByHtoo Shop Management System. 
+                    <a href="https://github.com/K-arthur381/CakeByHtoo" target="_blank" class="text-decoration-none text-muted">MIT License</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Version data
+        const versions = {
+            '7.0.1': { 
+                android: { size: '86 MB', date: 'Dec 10, 2025' },
+                windows: { size: '491 MB', date: 'Dec 10, 2025' }
+            },
+             '7.0.0': { 
+                android: { size: '86 MB', date: 'Dec 10, 2025' },
+                windows: { size: '400 MB', date: 'Dec 10, 2025' }
+            },
+              '6.0.0': { 
+                android: { size: '86 MB', date: 'Dec 10, 2025' },
+                windows: { size: '390 MB', date: 'Dec 10, 2025' }
+            },
+              '5.1.0': { 
+                android: { size: '86 MB', date: 'Dec 10, 2025' },
+                windows: { size: '210 MB', date: 'Dec 10, 2025' }
+            },
+              '5.0.0': { 
+                android: { size: '86 MB', date: 'Dec 10, 2025' },
+                windows: { size: '149 MB', date: 'Dec 10, 2025' }
+            },
+              '4.0.1': { 
+                android: { size: '86 MB', date: 'Dec 10, 2025' },
+                windows: { size: '149 MB', date: 'Dec 10, 2025' }
+            },
+             '1.0.0': { 
+                android: { size: '120 MB', date: 'Dec 10, 2025' },
+                windows: { size: '149 MB', date: 'Dec 10, 2025' }
+            },
+             '1.0': { 
+                android: { size: '68 MB', date: 'Dec 10, 2025' },
+                windows: { size: '100 MB', date: 'Dec 10, 2025' }
+            },
+        };
+
+        // Current selected version
+        let currentVersion = '7.0.1';
+        let currentAndroidFile = 'CakeByHtoo-v7.0.1-android.apk';
+        let currentWindowsFile = 'CakeByHtoo-v7.0.1-windows.rar';
+
+        // Version selection
+        document.querySelectorAll('.version-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                document.querySelectorAll('.version-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('i')?.remove();
+                });
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                this.innerHTML += '<i class="bi bi-check-circle-fill text-success ms-2"></i>';
+                
+                // Get version data
+                const version = this.dataset.version;
+                currentVersion = version;
+                currentAndroidFile = this.dataset.mobile;
+                currentWindowsFile = this.dataset.windows;
+                
+                // Update version details
+                const versionData = versions[version];
+                document.getElementById('versionDetails').innerHTML = `
+                    <p class="text-muted small mb-1">Selected: <strong>v${version}</strong></p>
+                    <p class="text-muted small mb-1">Release Date: ${versionData.android.date}</p>
+                    <p class="text-muted small mb-1">File Size: Android ${versionData.android.size}, Windows ${versionData.windows.size}</p>
+                `;
+                
+                // Update platform tabs
+                document.getElementById('androidSize').textContent = versionData.android.size;
+                document.getElementById('windowsSize').textContent = versionData.windows.size;
+                document.getElementById('androidVersion').textContent = `v${version}`;
+                document.getElementById('windowsVersion').textContent = `v${version}`;
+            });
+        });
+
+        // Download handlers
+        document.getElementById('downloadAndroid').addEventListener('click', function() {
+           
+            downloadFile(currentAndroidFile,`CakeByHtoo-v${currentVersion}-android.apk`);
+        });
+
+        document.getElementById('downloadWindows').addEventListener('click', function() {
+            downloadFile(currentWindowsFile, `CakeByHtoo-v${currentVersion}-windows.rar`);
+        });
+
+        document.getElementById('downloadSource').addEventListener('click', function() {
+            window.open('https://github.com/K-arthur381/CakeByHtoo', '_blank');
+        });
+
+        document.getElementById('downloadDocs').addEventListener('click', function() {
+            window.open('./doc.html', '_blank');
+        });
+
+        // Download function
+        function downloadFile(filename, downloadName) {
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="bi bi-cloud-arrow-down"></i> Downloading...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                // Simulate file download
+                const link = document.createElement('a');
+                link.href = filename; // Your actual file URL
+                link.download = downloadName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Show success message
+                showAlert(`Download started: ${downloadName}`, 'success');
+                
+                // Reset button
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 1500);
+            }, 1000);
+        }
+
+        // Show alert
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed top-0 end-0 m-3`;
+            alertDiv.style.zIndex = '9999';
+            alertDiv.innerHTML = `
+                <i class="bi bi-check-circle"></i> ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
